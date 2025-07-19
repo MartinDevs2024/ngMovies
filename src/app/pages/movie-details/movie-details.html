@@ -1,0 +1,36 @@
+@if (movie) {
+  <div class="movie-details">
+    <div class="movie-image">
+      <img [src]="movie.Poster" [alt]="movie.Title" />
+    </div>
+    <div class="movie-info">
+      <h2>{{ movie.Title }}</h2>
+      <ul>
+        <li><strong>Genre:</strong> {{ movie.Genre }}</li>
+        <li><strong>Released:</strong> {{ movie.Released }}</li>
+        <li><strong>Rated:</strong> {{ movie.Rated }}</li>
+        <li><strong>IMDB Rating:</strong> {{ movie.imdbRating }}</li>
+        <li><strong>Director:</strong> {{ movie.Director }}</li>
+        <li><strong>Writer:</strong> {{ movie.Writer }}</li>
+        <li><strong>Actors:</strong> {{ movie.Actors }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="movie-plot">
+    <h3>Plot</h3>
+    <p>{{ movie.Plot }}</p>
+    <hr />
+    <a
+      [href]="'http://imdb.com/title/' + movie.imdbID"
+      target="_blank"
+      class="btn-primary"
+    >View IMDB</a>
+    <a
+      [routerLink]="['/movies']"
+      class="btn-secondary"
+    >Go Back To Search</a>
+  </div>
+} @else {
+  <p>Loading movie details...</p>
+}

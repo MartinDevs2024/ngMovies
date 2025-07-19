@@ -1,0 +1,15 @@
+<div class="movie-card">
+  <div class="movie-year">
+    <p>{{ movie.Year }}</p>
+  </div>
+  <div class="movie-poster">
+    <img [src]="getImage()" [alt]="movie.Title" />
+  </div>
+  <div class="movie-info">
+    <span class="movie-type">{{ movie.Type }}</span>
+    <h3 class="movie-title">{{ movie.Title }}</h3>
+    <button class="details-button" routerLink="/movies/{{movie.imdbID}}">
+      Movie Details
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="movie-container">
+  <div class="hero-section">
+    <h1>Search For Any Movie</h1>
+    <div class="search-box">
+      <input
+        type="text"
+        #movieSearchInput
+        placeholder="Search for Movie"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="movie-container">
+  @if (movies.length > 0) {
+    <div class="movie-grid">
+      @for(movie of movies; track movie.imdbID) {
+        <app-card-movie [movie]="movie"></app-card-movie>
+      }
+    </div>
+      <!-- <app-card-movie
+        *ngFor="let movie of movies"
+        [movie]="movie"
+      ></app-card-movie>
+    </div> -->
+  } @else {
+    <h3 class="empty-message">Didn't find any Movies</h3>
+  }
+</div>
