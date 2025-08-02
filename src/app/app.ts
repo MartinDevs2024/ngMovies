@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, effect, inject, signal } from '@angular/core';
 import { NavigationCancel, NavigationEnd,
   NavigationError, NavigationStart, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
